@@ -1,12 +1,21 @@
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.vSort.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Design Test</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<style>
-    #demo {background:#E2E2E2;border:2px solid red;}
-    .sortitem{background:#fff;border:2px solid #ccc;padding-left:20px;}
-    .sortitem .sorthandle{position:absolute;top:5px;bottom:5px;left:3px;width:8px;display:none;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAB3RJTUUH3wIDBycZ/Cj09AAAAAlwSFlzAAALEgAACxIB0t1+/AAAAARnQU1BAACxjwv8YQUAAAAWSURBVHjaY2DABhoaGupBGMRmYiAEAKo2BAFbROu9AAAAAElFTkSuQmCC');}
-    .sortitem:hover .sorthandle{display:block;}
-</style>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.vSort.min.js"></script>
+
+    <style>
+        #demo {background:#E2E2E2;border:2px solid red;}
+        .sortitem{background:#fff;border:2px solid #ccc;padding-left:20px;}
+        .sortitem .sorthandle{position:absolute;top:5px;bottom:5px;left:3px;width:8px;display:none;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAB3RJTUUH3wIDBycZ/Cj09AAAAAlwSFlzAAALEgAACxIB0t1+/AAAAARnQU1BAACxjwv8YQUAAAAWSURBVHjaY2DABhoaGupBGMRmYiAEAKo2BAFbROu9AAAAAElFTkSuQmCC');}
+        .sortitem:hover .sorthandle{display:block;}
+    </style>
+</head>
+<body>
 <!-- sort container -->
 <div id="demo" data-callback="alert('list order modified')">
     <div class="sortitem"> <!-- sort item -->
@@ -22,3 +31,5 @@
         333333<br>333333<br>333333<br>333333
     </div>
 </div>
+</body>
+</html>
