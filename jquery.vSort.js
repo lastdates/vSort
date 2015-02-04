@@ -57,6 +57,7 @@
 				}
 			})();
 		});
+		return false;
 	},
 	S=function(y){
 		mY+=y;
@@ -69,6 +70,6 @@
 	$.fn.vSort = function(){
 		$('.sorthandle').attr("unselectable","on").bind("mousedown",M);
 	};
-	$("<style>.sortitem{position:relative;}.sortitem .sorthandle{cursor:move;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.sortitem.dragging{z-index:9999;opacity:.85;-webkit-box-shadow:0 0 0.625em rgba(0,0,0,0.5);box-shadow:0 0 0.625em rgba(0,0,0,0.5);}</style>").appendTo("head");
+	$("<style>.sortitem{position:relative;}.sortitem .sorthandle{cursor:move;}.sortitem.dragging{z-index:9999;opacity:.85;-webkit-box-shadow:0 0 0.625em rgba(0,0,0,0.5);box-shadow:0 0 0.625em rgba(0,0,0,0.5);}</style>").appendTo("head");
 	$(document).ready(function(){$(document).vSort();});
 })(jQuery);
