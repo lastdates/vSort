@@ -37,44 +37,40 @@
 
 <p>To include vSort plugin</p>
 
-<pre><code>&lt;script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="jquery.vSort.min.js"&gt;&lt;/script&gt;
-</code></pre>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s1"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s1"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>jquery.vSort.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <p>To run a javascript code after sorting is done</p>
 
-<pre><code>data-callback="alert('list order modified')"
-</code></pre>
+<div class="highlight highlight-html"><pre>data-callback="alert('list order modified')"</pre></div>
 
 <p>Sample code</p>
 
-<pre><code>&lt;style&gt;
-    #demo {background:#E2E2E2;border:2px solid red;}
-    .sortitem{background:#fff;border:2px solid #ccc;padding-left:20px;}
-    .sortitem .sorthandle{position:absolute;top:5px;bottom:5px;left:3px;width:8px;display:none;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAB3RJTUUH3wIDBycZ/Cj09AAAAAlwSFlzAAALEgAACxIB0t1+/AAAAARnQU1BAACxjwv8YQUAAAAWSURBVHjaY2DABhoaGupBGMRmYiAEAKo2BAFbROu9AAAAAElFTkSuQmCC');}
-    .sortitem:hover .sorthandle{display:block;}
-&lt;/style&gt;
-&lt;!-- sort container --&gt;
-&lt;div id="demo" data-callback="alert('list order modified')"&gt;
-    &lt;div class="sortitem"&gt; &lt;!-- sort item --&gt;
-        &lt;span class="sorthandle"&gt; &lt;/span&gt; &lt;!-- sort handle --&gt;
-        111111&lt;br&gt;111111
-    &lt;/div&gt;
-    &lt;div class="sortitem"&gt;
-        &lt;span class="sorthandle"&gt; &lt;/span&gt;
-        222222&lt;br&gt;222222&lt;br&gt;222222
-    &lt;/div&gt;
-    &lt;div class="sortitem"&gt;
-        &lt;span class="sorthandle"&gt; &lt;/span&gt;
-        333333&lt;br&gt;333333&lt;br&gt;333333&lt;br&gt;333333
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="highlight highlight-html"><pre><span class="pl-s2">&lt;<span class="pl-ent">style</span>&gt;</span>
+<span class="pl-s2">    <span class="pl-e">#demo</span> {<span class="pl-mp"><span class="pl-s3">background</span></span>:<span class="pl-c1">#E2E2E2</span>;<span class="pl-mp"><span class="pl-s3">border</span></span>:<span class="pl-c1">2<span class="pl-k">px</span></span> <span class="pl-sc">solid</span> <span class="pl-sc">red</span>;}</span>
+<span class="pl-s2">    <span class="pl-e">.sortitem</span>{<span class="pl-mp"><span class="pl-s3">background</span></span>:<span class="pl-c1">#fff</span>;<span class="pl-mp"><span class="pl-s3">border</span></span>:<span class="pl-c1">2<span class="pl-k">px</span></span> <span class="pl-sc">solid</span> <span class="pl-c1">#ccc</span>;<span class="pl-mp"><span class="pl-s3">padding-left</span></span>:<span class="pl-c1">20<span class="pl-k">px</span></span>;}</span>
+<span class="pl-s2">    <span class="pl-e">.sortitem</span> <span class="pl-e">.sorthandle</span>{<span class="pl-mp"><span class="pl-s3">position</span></span>:<span class="pl-sc">absolute</span>;<span class="pl-mp"><span class="pl-s3">top</span></span>:<span class="pl-c1">5<span class="pl-k">px</span></span>;<span class="pl-mp"><span class="pl-s3">bottom</span></span>:<span class="pl-c1">5<span class="pl-k">px</span></span>;<span class="pl-mp"><span class="pl-s3">left</span></span>:<span class="pl-c1">3<span class="pl-k">px</span></span>;<span class="pl-mp"><span class="pl-s3">width</span></span>:<span class="pl-c1">8<span class="pl-k">px</span></span>;<span class="pl-mp"><span class="pl-s3">display</span></span>:<span class="pl-sc">none</span>;<span class="pl-mp"><span class="pl-s3">background-image</span></span>:<span class="pl-s3">url</span>(<span class="pl-s1"><span class="pl-pds">'</span>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAB3RJTUUH3wIDBycZ/Cj09AAAAAlwSFlzAAALEgAACxIB0t1+/AAAAARnQU1BAACxjwv8YQUAAAAWSURBVHjaY2DABhoaGupBGMRmYiAEAKo2BAFbROu9AAAAAElFTkSuQmCC<span class="pl-pds">'</span></span>);}</span>
+<span class="pl-s2">    <span class="pl-e">.sortitem</span><span class="pl-e">:hover</span> <span class="pl-e">.sorthandle</span>{<span class="pl-mp"><span class="pl-s3">display</span></span>:<span class="pl-sc">block</span>;}</span>
+<span class="pl-s2">&lt;/<span class="pl-ent">style</span>&gt;</span>
+<span class="pl-c">&lt;!-- sort container --&gt;</span>
+&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s1"><span class="pl-pds">"</span>demo<span class="pl-pds">"</span></span> <span class="pl-e">data-callback</span>=<span class="pl-s1"><span class="pl-pds">"</span>alert('list order modified')<span class="pl-pds">"</span></span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span>&gt; <span class="pl-c">&lt;!-- sort item --&gt;</span>
+        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt; <span class="pl-c">&lt;!-- sort handle --&gt;</span>
+        111111&lt;<span class="pl-ent">br</span>&gt;111111
+    &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt;
+        222222&lt;<span class="pl-ent">br</span>&gt;222222&lt;<span class="pl-ent">br</span>&gt;222222
+    &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt;
+        333333&lt;<span class="pl-ent">br</span>&gt;333333&lt;<span class="pl-ent">br</span>&gt;333333&lt;<span class="pl-ent">br</span>&gt;333333
+    &lt;/<span class="pl-ent">div</span>&gt;
+&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
 <p>To update vSort-lists after new items are added to sort container</p>
 
-<pre><code>$(document).vSort();
-</code></pre>
+<div class="highlight highlight-javascript"><pre>$(<span class="pl-s3">document</span>).vSort();</pre></div>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/deatul">deatul</a></p>
