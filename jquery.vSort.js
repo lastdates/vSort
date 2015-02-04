@@ -1,4 +1,14 @@
-(function($){ // vSort		to update, call - $(document).vSort();
+/**
+ * vSort 1.0
+ * vSort is a simple jQuery plugin for making lists sortable with a handle
+ *
+ * Copyright 2015, Atul Gupta
+ * Licensed under the MIT license.
+ * https://github.com/deatul/vSort
+ *
+ * Date: Wed Feb 04 2015 11:15:11 GMT+0530 (IST)
+ */
+(function($){
 	var mY,t,b,tY,ph,nh,el,
 	M=function(e){
 		mY=e.pageY;
