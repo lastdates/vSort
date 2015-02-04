@@ -4,7 +4,7 @@
  *
  * Copyright 2015, Atul Gupta
  * Licensed under the MIT license.
- * https://github.com/deatul/vSort
+ * https://github.com/lastdates/vSort
  *
  * Date: Wed Feb 04 2015 11:15:11 GMT+0530 (IST)
  */
