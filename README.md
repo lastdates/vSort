@@ -1,6 +1,9 @@
 # vSort
 vSort is a simple jQuery plugin for making lists sortable with a handle 
-Tested in IE8, FF
+
+Demo
+
+http://code.mgvz.com/vSort/ Tested in IE8, FF
 
 To include vSort plugin
 
