@@ -16,7 +16,7 @@
 		el=$(this).parent();
 		if(!el.hasClass('sortitem'))
 			return false;
-		var P=el.parent();
+		var P=el.parent(),i=el.index();
 		var H=P.innerHeight(),
 			T=P.children().first().offset().top,
 			F=P.attr("data-callback"),
@@ -50,7 +50,7 @@
 				el.css({'top':tY+'px'});
 				if(tY==0){
 					el.removeClass('dragging');
-					if(F) eval(F);
+					if(F && el.index()!=i) eval(F);
 				}
 				else{
 					setTimeout(R,10);
