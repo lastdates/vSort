@@ -4,16 +4,17 @@ vSort is a simple jQuery plugin for making lists sortable with a handle
 [Demo](http://code.mgvz.com/vSort/) Tested in IE8, FF
 
 To include vSort plugin
-
+```html
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="jquery.vSort.min.js"></script>
+```
 
 To run a javascript code after sorting is done
 
     data-callback="alert('list order modified')"
  
 Sample code
-
+```html
     <style>
         #demo {background:#E2E2E2;border:2px solid red;}
         .sortitem{background:#fff;border:2px solid #ccc;padding-left:20px;}
@@ -35,8 +36,9 @@ Sample code
             333333<br>333333<br>333333<br>333333
         </div>
     </div>
+```
 
 To update vSort-lists after new items are added to sort container
-
+```javascript
     $(document).vSort();
-
+```
