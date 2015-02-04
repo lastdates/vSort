@@ -1,5 +1,5 @@
 # vSort
-vSort is a simple jQuery plugin for making lists sortable with a handle 
+vSort is a simple jQuery plugin for making lists sortable with a handle < 1.5kB minimized including css
 
 [<img width="360" height="208" src="https://cloud.githubusercontent.com/assets/4730683/6038591/5ba438ce-ac84-11e4-9e7b-f96a9ba02a8e.png" alt="Screenshot">](http://code.mgvz.com/vSort/)
 
