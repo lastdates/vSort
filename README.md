@@ -1,18 +1,14 @@
 # vSort
 
-To update vSort-lists after new item is added
-
-    $(document).vSort();
-
-To run a javascript code after sorting is done
-
-    data-callback="alert('list order modified')"
- 
 To include vSort plugin
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="jquery.vSort.min.js"></script>
 
+To run a javascript code after sorting is done
+
+    data-callback="alert('list order modified')"
+ 
 Sample code
 
     <!-- sort container -->
@@ -30,3 +26,8 @@ Sample code
             333333<br>333333<br>333333<br>333333
         </div>
     </div>
+
+To update vSort-lists after new items are added to sort container
+
+    $(document).vSort();
+
