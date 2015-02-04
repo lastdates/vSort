@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Vsort by deatul</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Vsort</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/deatul/vSort">View the Project on GitHub <small>deatul/vSort</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/deatul/vSort/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/deatul/vSort/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/deatul/vSort">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="vsort" class="anchor" href="#vsort" aria-hidden="true"><span class="octicon octicon-link"></span></a>vSort</h1>
+
+<p>vSort is a simple jQuery plugin for making lists sortable with a handle 
+Tested in IE8, FF</p>
+
+<p>To include vSort plugin</p>
+
+<pre><code>&lt;script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="jquery.vSort.min.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<p>To run a javascript code after sorting is done</p>
+
+<pre><code>data-callback="alert('list order modified')"
+</code></pre>
+
+<p>Sample code</p>
+
+<pre><code>&lt;style&gt;
+    #demo {background:#E2E2E2;border:2px solid red;}
+    .sortitem{background:#fff;border:2px solid #ccc;padding-left:20px;}
+    .sortitem .sorthandle{position:absolute;top:5px;bottom:5px;left:3px;width:8px;display:none;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAB3RJTUUH3wIDBycZ/Cj09AAAAAlwSFlzAAALEgAACxIB0t1+/AAAAARnQU1BAACxjwv8YQUAAAAWSURBVHjaY2DABhoaGupBGMRmYiAEAKo2BAFbROu9AAAAAElFTkSuQmCC');}
+    .sortitem:hover .sorthandle{display:block;}
+&lt;/style&gt;
+&lt;!-- sort container --&gt;
+&lt;div id="demo" data-callback="alert('list order modified')"&gt;
+    &lt;div class="sortitem"&gt; &lt;!-- sort item --&gt;
+        &lt;span class="sorthandle"&gt; &lt;/span&gt; &lt;!-- sort handle --&gt;
+        111111&lt;br&gt;111111
+    &lt;/div&gt;
+    &lt;div class="sortitem"&gt;
+        &lt;span class="sorthandle"&gt; &lt;/span&gt;
+        222222&lt;br&gt;222222&lt;br&gt;222222
+    &lt;/div&gt;
+    &lt;div class="sortitem"&gt;
+        &lt;span class="sorthandle"&gt; &lt;/span&gt;
+        333333&lt;br&gt;333333&lt;br&gt;333333&lt;br&gt;333333
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>To update vSort-lists after new items are added to sort container</p>
+
+<pre><code>$(document).vSort();
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/deatul">deatul</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
