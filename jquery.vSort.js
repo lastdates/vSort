@@ -9,7 +9,7 @@
  * Date: Wed Feb 04 2015 11:15:11 GMT+0530 (IST)
  */
 (function($){
-	var mY,t,b,tY,ph,nh,el,
+	var mY,t,b,tY,ph,nh,el,d=$(document),
 	M=function(e){
 		mY=e.pageY;
 		tY=0;
@@ -26,7 +26,7 @@
 		ph=el.prev().outerHeight()/2,
 		nh=el.next().outerHeight()/2;
 		el.addClass('dragging');
-		$(document).bind('mousemove',function(e){
+		d.bind('mousemove',function(e){
 			tY=e.pageY-mY;
 			if(tY >= nh){
 				el.insertAfter(el.next());
@@ -40,9 +40,9 @@
 			else if(b + tY > H) tY=H-b;
 			el.css({'top':tY+'px'});
 		});
-		$(document).bind('mouseup',function(e){
-			$(document).unbind('mousemove');
-			$(document).unbind('mouseup');
+		d.bind('mouseup',function(e){
+			d.unbind('mousemove');
+			d.unbind('mouseup');
 			(function R(){
 				if(tY>3){tY-=3;}
 				else if(tY<-3){tY+=3;}
@@ -71,5 +71,5 @@
 		$('.sorthandle').attr("unselectable","on").bind("mousedown",M);
 	};
 	$("<style>.sortitem{position:relative;}.sortitem .sorthandle{cursor:move;}.sortitem.dragging{z-index:9999;opacity:.85;-webkit-box-shadow:0 0 0.625em rgba(0,0,0,0.5);box-shadow:0 0 0.625em rgba(0,0,0,0.5);}</style>").appendTo("head");
-	$(document).ready(function(){$(document).vSort();});
+	d.ready(function(){d.vSort();});
 })(jQuery);
