@@ -2,7 +2,7 @@
 vSort is a simple jQuery plugin for making lists sortable with a handle
 * less than 1.4kB including css
 * Tested in IE8, FireFox, Chrome
-* [Demo](http://code.mgvz.com/vSort/)
+* [Live Demo](http://code.mgvz.com/vSort/)
 
 [<img width="360" height="208" src="https://cloud.githubusercontent.com/assets/4730683/6038591/5ba438ce-ac84-11e4-9e7b-f96a9ba02a8e.png" alt="Screenshot">](http://code.mgvz.com/vSort/)
 
