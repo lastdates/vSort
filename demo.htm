@@ -4,10 +4,15 @@
     <title>vSort Demo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="http://lastdates.github.io/vSort/stylesheets/styles.css">
+    <style>
+		body{padding:20px}
+		header{position:static;float:none}
+		header ul{position:absolute;right:28px;top:20px;}
+    </style>
 
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script type="text/javascript" src="jquery.vSort.min.js"></script>
-
     <style>
         #demo {background:#E2E2E2;border:2px solid red;}
         .sortitem{background:#fff;border:2px solid #ccc;padding-left:20px;}
@@ -16,6 +21,16 @@
     </style>
 </head>
 <body>
+  <header>
+	<h1>Lastdates vSort</h1>
+	<p></p>
+	<ul>
+	  <li><a href="https://github.com/lastdates/vSort/zipball/master">Download <strong>ZIP File</strong></a></li>
+	  <li><a href="https://github.com/lastdates/vSort/tarball/master">Download <strong>TAR Ball</strong></a></li>
+	  <li><a href="https://github.com/lastdates/vSort">View On <strong>GitHub</strong></a></li>
+	</ul>
+  </header>
+
 <!-- sort container -->
 <div id="demo" data-callback="alert('list order modified')">
     <div class="sortitem"> <!-- sort item -->
@@ -31,5 +46,6 @@
         333333<br>333333<br>333333<br>333333
     </div>
 </div>
+
 </body>
 </html>
