@@ -9,7 +9,7 @@
  * Date: Wed Feb 04 2015 11:15:11 GMT+0530 (IST)
  */
 (function($){
-	var mY,t,b,tY,ph,nh,el,d=$(),
+	var mY,t,b,tY,ph,nh,el,d=$(document),
 	M=function(e){
 		e.preventDefault();
 		mY=e.pageY || e.originalEvent.touches[0].pageY;
