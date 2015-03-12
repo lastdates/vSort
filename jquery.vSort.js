@@ -1,5 +1,5 @@
 /**
- * vSort 1.0
+ * vSort 1.1
  * vSort is a simple jQuery plugin for making lists sortable with a handle
  *
  * Copyright 2015, Atul Gupta
@@ -9,9 +9,10 @@
  * Date: Wed Feb 04 2015 11:15:11 GMT+0530 (IST)
  */
 (function($){
-	var mY,t,b,tY,ph,nh,el,d=$(document),
+	var mY,t,b,tY,ph,nh,el,d=$(),
 	M=function(e){
-		mY=e.pageY;
+		e.preventDefault();
+		mY=e.pageY || e.originalEvent.touches[0].pageY;
 		tY=0;
 		el=$(this).parent();
 		if(!el.hasClass('sortitem'))
@@ -26,8 +27,9 @@
 		ph=el.prev().outerHeight()/2,
 		nh=el.next().outerHeight()/2;
 		el.addClass('dragging');
-		d.bind('mousemove',function(e){
-			tY=e.pageY-mY;
+		d.bind('mousemove touchmove',function(e){
+			e.preventDefault();
+			tY=(e.pageY || e.originalEvent.touches[0].pageY)-mY;
 			if(tY >= nh){
 				el.insertAfter(el.next());
 				S(2*nh);
@@ -40,9 +42,8 @@
 			else if(b + tY > H) tY=H-b;
 			el.css({'top':tY+'px'});
 		});
-		d.bind('mouseup',function(e){
-			d.unbind('mousemove');
-			d.unbind('mouseup');
+		d.bind('mouseup touchend',function(e){
+			d.unbind('mousemove mouseup touchmove touchend');
 			(function R(){
 				if(tY>3){tY-=3;}
 				else if(tY<-3){tY+=3;}
@@ -50,7 +51,7 @@
 				el.css({'top':tY+'px'});
 				if(tY==0){
 					el.removeClass('dragging');
-					if(F && el.index()!=i) eval(F);
+					if(F && el.index()!=i) setTimeout((function(){eval(F)}),20);
 				}
 				else{
 					setTimeout(R,10);
@@ -68,7 +69,7 @@
 		nh=el.next().outerHeight()/2;
 	};
 	$.fn.vSort = function(){
-		$('.sorthandle').attr("unselectable","on").bind("mousedown",M);
+		$('.sorthandle').attr("unselectable","on").bind("touchstart mousedown",M);
 	};
 	$("<style>.sortitem{position:relative;}.sortitem .sorthandle{cursor:move;}.sortitem.dragging{z-index:9999;opacity:.85;-webkit-box-shadow:0 0 0.625em rgba(0,0,0,0.5);box-shadow:0 0 0.625em rgba(0,0,0,0.5);}</style>").appendTo("head");
 	d.ready(function(){d.vSort();});
