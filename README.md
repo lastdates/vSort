@@ -1,6 +1,6 @@
 # vSort
 vSort is a simple jQuery plugin for making lists sortable with a handle
-* less than 1.4kB including css
+* less than 1.5kB including css
 * Tested in IE8, FireFox, Chrome
 * [Live Demo](http://code.mgvz.com/vSort/)
 
@@ -8,7 +8,7 @@ vSort is a simple jQuery plugin for making lists sortable with a handle
 
 To include vSort plugin
 ```html
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript" src="jquery.vSort.min.js"></script>
 ```
 
@@ -44,5 +44,5 @@ Sample code
 
 To update vSort-lists after new items are added to sort container
 ```javascript
-$(document).vSort();
+$().vSort();
 ```
