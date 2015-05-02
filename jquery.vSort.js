@@ -1,12 +1,12 @@
 /**
- * vSort 1.1
+ * vSort 1.2
  * vSort is a simple jQuery plugin for making lists sortable with a handle
  *
  * Copyright 2015, Atul Gupta
  * Licensed under the MIT license.
  * https://github.com/lastdates/vSort
  *
- * Date: Wed Feb 04 2015 11:15:11 GMT+0530 (IST)
+ * Date: Sat May 02 2015 23:15:11 GMT+0530 (IST)
  */
 (function($){
 	var mY,t,b,tY,ph,nh,el,d=$(document),
@@ -20,8 +20,14 @@
 		var P=el.parent(),i=el.index();
 		var H=P.innerHeight(),
 			T=P.children().first().offset().top,
-			F=P.attr("data-callback"),
-			h=el.outerHeight();
+			F=P.data("callback"),
+			h=el.outerHeight(),
+			r=el.data("restrict");
+		if(r){
+			var R="[data-restrict="+r+"]:first";
+			r=el.prevAll(R); if(r.length){H+=T;T=r.offset().top+r.outerHeight();H-=T;}
+			r=el.nextAll(R); if(r.length)H=r.offset().top-T;
+		}
 		t=el.offset().top - T;
 		b=t + h;
 		ph=el.prev().outerHeight()/2,
@@ -30,7 +36,9 @@
 		d.bind('mousemove touchmove',function(e){
 			e.preventDefault();
 			tY=(e.pageY || e.originalEvent.touches[0].pageY)-mY;
-			if(tY >= nh){
+			if(t + tY < 0) tY=-1*t;
+			else if(b + tY > H) tY=H-b;
+			else if(tY >= nh){
 				el.insertAfter(el.next());
 				S(2*nh);
 			}
@@ -38,8 +46,6 @@
 				el.insertBefore(el.prev());
 				S(-2*ph);
 			}
-			if(t + tY < 0) tY=-1*t;
-			else if(b + tY > H) tY=H-b;
 			el.css({'top':tY+'px'});
 		});
 		d.bind('mouseup touchend',function(e){
