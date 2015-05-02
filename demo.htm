@@ -4,6 +4,9 @@
     <title>vSort Demo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<!--[if lt IE 9]>
+		<script src="https://raw.githubusercontent.com/aFarkas/html5shiv/master/dist/html5shiv.min.js"></script>
+	<![endif]-->
 	<link rel="stylesheet" href="http://lastdates.github.io/vSort/stylesheets/styles.css">
     <style>
 		body{padding:20px}
@@ -17,7 +20,7 @@
         #demo {background:#E2E2E2;border:2px solid red;}
         .sortitem{background:#fff;border:2px solid #ccc;padding-left:20px;}
         .sortitem .sorthandle{position:absolute;top:5px;bottom:5px;left:3px;width:8px;display:none;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAB3RJTUUH3wIDBycZ/Cj09AAAAAlwSFlzAAALEgAACxIB0t1+/AAAAARnQU1BAACxjwv8YQUAAAAWSURBVHjaY2DABhoaGupBGMRmYiAEAKo2BAFbROu9AAAAAElFTkSuQmCC');}
-        .sortitem:hover .sorthandle{display:block;}
+        .sortitem .sorthandle{display:block;}
     </style>
 </head>
 <body>
@@ -37,15 +40,30 @@
         <span class="sorthandle"> </span> <!-- sort handle -->
         111111<br>111111
     </div>
-    <div class="sortitem">
+    <div class="sortitem" data-restrict="alpha">
         <span class="sorthandle"> </span>
-        222222<br>222222<br>222222
+        I am alpha<br>I don't cross beta<br>Try
     </div>
     <div class="sortitem">
         <span class="sorthandle"> </span>
         333333<br>333333<br>333333<br>333333
     </div>
+    <div class="sortitem" data-restrict="beta">
+        <span class="sorthandle"> </span>
+        Yep - I don't cross Yo
+    </div>
+    <div class="sortitem">
+        <span class="sorthandle"> </span>
+        Yes
+    </div>
+    <div class="sortitem" data-restrict="alpha">
+        <span class="sorthandle"> </span>
+        I am beta<br>I also don't cross alhpa<br>Its obvious ;)
+    </div>
+    <div class="sortitem" data-restrict="beta">
+        <span class="sorthandle"> </span>
+        Yo - I don't cross Yep
+    </div>
 </div>
-
 </body>
 </html>
