@@ -29,13 +29,22 @@
       </header>
       <section>
         <h1>
-<a id="vsort" class="anchor" href="#vsort" aria-hidden="true"><span class="octicon octicon-link"></span></a>vSort</h1>
+<a id="vsort-v12" class="anchor" href="#vsort-v12" aria-hidden="true"><span class="octicon octicon-link"></span></a>vSort v1.2</h1>
 
 <p>vSort is a simple jQuery plugin for making lists sortable with a handle</p>
 
 <ul>
-<li>less than 1.5kB including css</li>
-<li>Tested in IE8, FireFox, Chrome</li>
+<li>less than 1.6kB including css</li>
+<li>Tested in IE8, FireFox, Chrome, Touch enabled for mobiles</li>
+</ul>
+
+<p>Features</p>
+
+<ul>
+<li>Restrictive sort, aka selected elements not crossing each other (v1.2)</li>
+<li>Touch-enabled for mobile (v1.1)</li>
+<li>Nested sorting within lists (v1.0)</li>
+<li>callback function on successful sort (v1.0)</li>
 <li><a href="http://code.mgvz.com/vSort/">Live Demo</a></li>
 </ul>
 
@@ -43,8 +52,8 @@
 
 <p>To include vSort plugin</p>
 
-<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s1"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
-&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s1"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s1"><span class="pl-pds">"</span>jquery.vSort.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;
+&lt;<span class="pl-ent">script</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>text/javascript<span class="pl-pds">"</span></span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>jquery.vSort.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <p>To run a javascript code after sorting is done</p>
 
@@ -52,25 +61,41 @@
 
 <p>Sample code</p>
 
-<div class="highlight highlight-html"><pre><span class="pl-s2">&lt;<span class="pl-ent">style</span>&gt;</span>
-<span class="pl-s2">    <span class="pl-e">#demo</span> {<span class="pl-mp"><span class="pl-s3">background</span></span>:<span class="pl-c1">#E2E2E2</span>;<span class="pl-mp"><span class="pl-s3">border</span></span>:<span class="pl-c1">2<span class="pl-k">px</span></span> <span class="pl-sc">solid</span> <span class="pl-sc">red</span>;}</span>
-<span class="pl-s2">    <span class="pl-e">.sortitem</span>{<span class="pl-mp"><span class="pl-s3">background</span></span>:<span class="pl-c1">#fff</span>;<span class="pl-mp"><span class="pl-s3">border</span></span>:<span class="pl-c1">2<span class="pl-k">px</span></span> <span class="pl-sc">solid</span> <span class="pl-c1">#ccc</span>;<span class="pl-mp"><span class="pl-s3">padding-left</span></span>:<span class="pl-c1">20<span class="pl-k">px</span></span>;}</span>
-<span class="pl-s2">    <span class="pl-e">.sortitem</span> <span class="pl-e">.sorthandle</span>{<span class="pl-mp"><span class="pl-s3">position</span></span>:<span class="pl-sc">absolute</span>;<span class="pl-mp"><span class="pl-s3">top</span></span>:<span class="pl-c1">5<span class="pl-k">px</span></span>;<span class="pl-mp"><span class="pl-s3">bottom</span></span>:<span class="pl-c1">5<span class="pl-k">px</span></span>;<span class="pl-mp"><span class="pl-s3">left</span></span>:<span class="pl-c1">3<span class="pl-k">px</span></span>;<span class="pl-mp"><span class="pl-s3">width</span></span>:<span class="pl-c1">8<span class="pl-k">px</span></span>;<span class="pl-mp"><span class="pl-s3">display</span></span>:<span class="pl-sc">none</span>;<span class="pl-mp"><span class="pl-s3">background-image</span></span>:<span class="pl-s3">url</span>(<span class="pl-s1"><span class="pl-pds">'</span>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAB3RJTUUH3wIDBycZ/Cj09AAAAAlwSFlzAAALEgAACxIB0t1+/AAAAARnQU1BAACxjwv8YQUAAAAWSURBVHjaY2DABhoaGupBGMRmYiAEAKo2BAFbROu9AAAAAElFTkSuQmCC<span class="pl-pds">'</span></span>);}</span>
-<span class="pl-s2">    <span class="pl-e">.sortitem</span><span class="pl-e">:hover</span> <span class="pl-e">.sorthandle</span>{<span class="pl-mp"><span class="pl-s3">display</span></span>:<span class="pl-sc">block</span>;}</span>
-<span class="pl-s2">&lt;/<span class="pl-ent">style</span>&gt;</span>
+<div class="highlight highlight-html"><pre><span class="pl-s1">&lt;<span class="pl-ent">style</span>&gt;</span>
+<span class="pl-s1">    <span class="pl-e">#demo</span> {<span class="pl-c1"><span class="pl-c1">background</span></span>:<span class="pl-c1">#E2E2E2</span>;<span class="pl-c1"><span class="pl-c1">border</span></span>:<span class="pl-c1">2<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">red</span>;}</span>
+<span class="pl-s1">    <span class="pl-e">.sortitem</span>{<span class="pl-c1"><span class="pl-c1">background</span></span>:<span class="pl-c1">#fff</span>;<span class="pl-c1"><span class="pl-c1">border</span></span>:<span class="pl-c1">2<span class="pl-k">px</span></span> <span class="pl-c1">solid</span> <span class="pl-c1">#ccc</span>;<span class="pl-c1"><span class="pl-c1">padding-left</span></span>:<span class="pl-c1">20<span class="pl-k">px</span></span>;}</span>
+<span class="pl-s1">    <span class="pl-e">.sortitem</span> <span class="pl-e">.sorthandle</span>{<span class="pl-c1"><span class="pl-c1">position</span></span>:<span class="pl-c1">absolute</span>;<span class="pl-c1"><span class="pl-c1">top</span></span>:<span class="pl-c1">5<span class="pl-k">px</span></span>;<span class="pl-c1"><span class="pl-c1">bottom</span></span>:<span class="pl-c1">5<span class="pl-k">px</span></span>;<span class="pl-c1"><span class="pl-c1">left</span></span>:<span class="pl-c1">3<span class="pl-k">px</span></span>;<span class="pl-c1"><span class="pl-c1">width</span></span>:<span class="pl-c1">8<span class="pl-k">px</span></span>;<span class="pl-c1"><span class="pl-c1">display</span></span>:<span class="pl-c1">none</span>;<span class="pl-c1"><span class="pl-c1">background-image</span></span>:<span class="pl-c1">url</span>(<span class="pl-s"><span class="pl-pds">'</span>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAB3RJTUUH3wIDBycZ/Cj09AAAAAlwSFlzAAALEgAACxIB0t1+/AAAAARnQU1BAACxjwv8YQUAAAAWSURBVHjaY2DABhoaGupBGMRmYiAEAKo2BAFbROu9AAAAAElFTkSuQmCC<span class="pl-pds">'</span></span>);}</span>
+<span class="pl-s1">    <span class="pl-e">.sortitem</span><span class="pl-e">:hover</span> <span class="pl-e">.sorthandle</span>{<span class="pl-c1"><span class="pl-c1">display</span></span>:<span class="pl-c1">block</span>;}</span>
+<span class="pl-s1">&lt;/<span class="pl-ent">style</span>&gt;</span>
 <span class="pl-c">&lt;!-- sort container --&gt;</span>
-&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s1"><span class="pl-pds">"</span>demo<span class="pl-pds">"</span></span> <span class="pl-e">data-callback</span>=<span class="pl-s1"><span class="pl-pds">"</span>alert('list order modified')<span class="pl-pds">"</span></span>&gt;
-    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span>&gt; <span class="pl-c">&lt;!-- sort item --&gt;</span>
-        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt; <span class="pl-c">&lt;!-- sort handle --&gt;</span>
+&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>demo<span class="pl-pds">"</span></span> <span class="pl-e">data-callback</span>=<span class="pl-s"><span class="pl-pds">"</span>alert('list order modified')<span class="pl-pds">"</span></span>&gt; <span class="pl-c">&lt;!-- callback script to run on successful sort --&gt;</span>
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span>&gt; <span class="pl-c">&lt;!-- sort item --&gt;</span>
+        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt; <span class="pl-c">&lt;!-- sort handle --&gt;</span>
         111111&lt;<span class="pl-ent">br</span>&gt;111111
     &lt;/<span class="pl-ent">div</span>&gt;
-    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span>&gt;
-        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt;
-        222222&lt;<span class="pl-ent">br</span>&gt;222222&lt;<span class="pl-ent">br</span>&gt;222222
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span> <span class="pl-e">data-restrict</span>=<span class="pl-s"><span class="pl-pds">"</span>alpha<span class="pl-pds">"</span></span>&gt; <span class="pl-c">&lt;!-- restrict sort, not-to-cross another alpha item --&gt;</span>
+        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt;
+        I am alpha&lt;<span class="pl-ent">br</span>&gt;I don't cross beta&lt;<span class="pl-ent">br</span>&gt;Try
     &lt;/<span class="pl-ent">div</span>&gt;
-    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span>&gt;
-        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s1"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt;
         333333&lt;<span class="pl-ent">br</span>&gt;333333&lt;<span class="pl-ent">br</span>&gt;333333&lt;<span class="pl-ent">br</span>&gt;333333
+    &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span> <span class="pl-e">data-restrict</span>=<span class="pl-s"><span class="pl-pds">"</span>beta<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt;
+        Yep - I don't cross Yo
+    &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt;
+        Yes
+    &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span> <span class="pl-e">data-restrict</span>=<span class="pl-s"><span class="pl-pds">"</span>alpha<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt;
+        I am beta&lt;<span class="pl-ent">br</span>&gt;I also don't cross alhpa&lt;<span class="pl-ent">br</span>&gt;Its obvious ;)
+    &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sortitem<span class="pl-pds">"</span></span> <span class="pl-e">data-restrict</span>=<span class="pl-s"><span class="pl-pds">"</span>beta<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>sorthandle<span class="pl-pds">"</span></span>&gt; &lt;/<span class="pl-ent">span</span>&gt;
+        Yo - I don't cross Yep
     &lt;/<span class="pl-ent">div</span>&gt;
 &lt;/<span class="pl-ent">div</span>&gt;</pre></div>
 
