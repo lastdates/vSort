@@ -1,13 +1,10 @@
-# vSort v1.2
+# vSort v1.2.1
 vSort is a simple jQuery plugin for making lists sortable with a handle
 * less than 1.6kB including css
 * Tested in IE8, FireFox, Chrome, Touch enabled for mobiles
-
-Features
 * Restrictive sort, aka selected elements not crossing each other (v1.2)
-* Touch-enabled for mobile (v1.1)
-* Nested sorting within lists (v1.0)
-* callback function on successful sort (v1.0)
+* Touch-enabled for mobile (v 1.1)
+* Nested sorting within lists, callback function on successful sort (v 1.0)
 * [Live Demo](http://code.mgvz.com/vSort/)
 
 [<img width="360" height="208" src="https://cloud.githubusercontent.com/assets/4730683/6038591/5ba438ce-ac84-11e4-9e7b-f96a9ba02a8e.png" alt="Screenshot">](http://code.mgvz.com/vSort/)
