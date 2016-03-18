@@ -1,12 +1,12 @@
 /**
- * vSort 1.2.1
+ * vSort 1.2.2
  * vSort is a simple jQuery plugin for making lists sortable with a handle
  *
  * Copyright 2015, Atul Gupta
  * Licensed under the MIT license.
  * https://github.com/lastdates/vSort
  *
- * Date: Mon Aug 24 2015 18:53:11 GMT+0530 (IST)
+ * Date: Fri Mar 18 2016 19:54:11 GMT+0530 (IST)
  */
 (function($){
 	var mY,t,b,tY,ph,nh,el,d=$(document),MoveStart="touchstart mousedown",Moving='mousemove touchmove ',MoveEnd='mouseup touchend',Dragging='dragging',Sortitem='sortitem',SortHandle='.sorthandle',BoxShadow='box-shadow:0 0 0.625em rgba(0,0,0,0.5);',
@@ -18,7 +18,7 @@
 		if(!el.hasClass(Sortitem))
 			return false;
 		var P=el.parent(),i=el.index();
-		var H=P.innerHeight(),
+		var H=P[0].scrollHeight,
 			T=P.children().first().offset().top,
 			F=P.data("callback"),
 			h=el.outerHeight(),
