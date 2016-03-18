@@ -1,4 +1,4 @@
-# vSort v1.2.1
+# vSort v1.2.2
 vSort is a simple jQuery plugin for making lists sortable with a handle
 * less than 1.6kB including css
 * Tested in IE8, FireFox, Chrome, Touch enabled for mobiles
